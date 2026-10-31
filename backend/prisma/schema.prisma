@@ -1,0 +1,464 @@
+// =========================================================================
+// PRISMA SCHEMA — MONGODB DATABASE DESIGN FOR AURA LEARN LMS
+// =========================================================================
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// -------------------------------------------------------------------------
+// ENUMS
+// -------------------------------------------------------------------------
+
+enum Role {
+  SUPER_ADMIN
+  MODERATOR
+  STUDENT
+}
+
+enum AccountStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  SUSPENDED
+}
+
+enum EnrollmentStatus {
+  ACTIVE
+  COMPLETED
+  REVOKED
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCESS
+  FAILED
+  CANCELLED
+}
+
+enum SubmissionStatus {
+  NOT_SUBMITTED
+  SUBMITTED
+  UNDER_REVIEW
+  GRADED
+  LATE
+}
+
+enum NotificationType {
+  ACCOUNT_APPROVED
+  ACCOUNT_REJECTED
+  COURSE_ENROLLED
+  PAYMENT_SUCCESS
+  ASSIGNMENT_REMINDER
+  ASSIGNMENT_GRADED
+  CERTIFICATE_ISSUED
+  ANNOUNCEMENT
+  SYSTEM_UPDATE
+}
+
+// -------------------------------------------------------------------------
+// 1. BETTER AUTH REQUIRED MODELS & EXTENDED USER PROFILE
+// -------------------------------------------------------------------------
+
+model User {
+  id            String        @id @default(auto()) @map("_id") @db.ObjectId
+  name          String
+  email         String        @unique
+  emailVerified Boolean       @default(false)
+  image         String?
+  role          Role          @default(STUDENT)
+  status        AccountStatus @default(PENDING)
+  phone         String?
+  bio           String?
+
+  // Relations
+  sessions       Session[]
+  accounts       Account[]
+  enrollments    Enrollment[]
+  payments       Payment[]
+  lessonProgress LessonProgress[]
+  submissions    AssignmentSubmission[]
+  certificates   Certificate[]
+  dailyStreaks   DailyStreak[]
+  notifications  Notification[]
+  auditLogs      AuditLog[]
+
+  // Moderator Assignments
+  assignedModeratorId String?               @db.ObjectId
+  assignedModerator   User?                 @relation("ModeratorToStudent", fields: [assignedModeratorId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  assignedStudents    User[]                @relation("ModeratorToStudent")
+  studentAssignments  ModeratorAssignment[] @relation("StudentRelation")
+  moderatorRecords    ModeratorAssignment[] @relation("ModeratorRelation")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([role])
+  @@index([status])
+  @@map("users")
+}
+
+model Session {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token     String   @unique
+  expiresAt DateTime
+  ipAddress String?
+  userAgent String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@map("sessions")
+}
+
+model Account {
+  id                    String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId                String    @db.ObjectId
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accountId             String
+  providerId            String
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([providerId, accountId])
+  @@index([userId])
+  @@map("accounts")
+}
+
+model Verification {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  identifier String
+  value      String
+  expiresAt  DateTime
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([identifier])
+  @@map("verifications")
+}
+
+// -------------------------------------------------------------------------
+// 2. COURSE & CONTENT ARCHITECTURE
+// -------------------------------------------------------------------------
+
+model CourseCategory {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String   @unique
+  slug        String   @unique
+  description String?
+  icon        String?
+
+  courses Course[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("course_categories")
+}
+
+model Course {
+  id               String          @id @default(auto()) @map("_id") @db.ObjectId
+  title            String
+  slug             String          @unique
+  description      String
+  shortDescription String?
+  thumbnail        String?
+  categoryId       String?         @db.ObjectId
+  category         CourseCategory? @relation(fields: [categoryId], references: [id])
+  price            Float
+  discountPrice    Float?
+  instructorName   String          @default("Julian Vance")
+  instructorRole   String          @default("Head of Growth @ ex-HubSpot")
+  instructorAvatar String?
+  level            String          @default("All Levels")
+  totalDuration    String          @default("42 Hours")
+  isPublished      Boolean         @default(false)
+  learningOutcomes Json?
+  requirements     Json?
+
+  modules        CourseModule[]
+  enrollments    Enrollment[]
+  payments       Payment[]
+  lessonProgress LessonProgress[]
+  assignments    Assignment[]
+  certificates   Certificate[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([isPublished])
+  @@index([categoryId])
+  @@map("courses")
+}
+
+model CourseModule {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  courseId String  @db.ObjectId
+  course   Course  @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  title    String
+  order    Int     @default(1)
+  duration String?
+
+  lessons     Lesson[]
+  assignments Assignment[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([courseId])
+  @@map("course_modules")
+}
+
+model Lesson {
+  id            String       @id @default(auto()) @map("_id") @db.ObjectId
+  moduleId      String       @db.ObjectId
+  module        CourseModule @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  title         String
+  slug          String
+  duration      String       @default("15m")
+  durationSec   Int          @default(900)
+  order         Int          @default(1)
+  isFree        Boolean      @default(false)
+  videoProvider String       @default("MUX") // MUX, BUNNY, EMBED
+  videoAssetId  String?
+  playbackUrl   String?
+  resources     Json?
+
+  progress LessonProgress[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([moduleId])
+  @@map("lessons")
+}
+
+// -------------------------------------------------------------------------
+// 3. ENROLLMENTS & SSLCOMMERZ PAYMENTS
+// -------------------------------------------------------------------------
+
+model Enrollment {
+  id       String           @id @default(auto()) @map("_id") @db.ObjectId
+  userId   String           @db.ObjectId
+  user     User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId String           @db.ObjectId
+  course   Course           @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  status   EnrollmentStatus @default(ACTIVE)
+
+  enrolledAt  DateTime  @default(now())
+  completedAt DateTime?
+  expiresAt   DateTime?
+
+  @@unique([userId, courseId])
+  @@index([userId])
+  @@index([courseId])
+  @@map("enrollments")
+}
+
+model Payment {
+  id              String        @id @default(auto()) @map("_id") @db.ObjectId
+  userId          String        @db.ObjectId
+  user            User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId        String        @db.ObjectId
+  course          Course        @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  transactionId   String        @unique
+  valId           String?       // SSLCommerz Validation ID
+  amount          Float
+  currency        String        @default("BDT")
+  status          PaymentStatus @default(PENDING)
+  gateway         String        @default("SSLCOMMERZ")
+  cardType        String?
+  bankTranId      String?
+  gatewayResponse Json?
+  ipnResponse     Json?
+  paidAt          DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([courseId])
+  @@index([status])
+  @@map("payments")
+}
+
+// -------------------------------------------------------------------------
+// 4. PROGRESS, DAILY STREAKS & CERTIFICATES
+// -------------------------------------------------------------------------
+
+model LessonProgress {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId         String    @db.ObjectId
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId       String    @db.ObjectId
+  course         Course    @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  lessonId       String    @db.ObjectId
+  lesson         Lesson    @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  isCompleted    Boolean   @default(false)
+  watchedSeconds Int       @default(0)
+  totalSeconds   Int       @default(0)
+  completedAt    DateTime?
+  lastWatchedAt  DateTime  @default(now())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, lessonId])
+  @@index([userId, courseId])
+  @@map("lesson_progress")
+}
+
+model DailyStreak {
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId           String   @db.ObjectId
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  activityDate     DateTime
+  lessonsCompleted Int      @default(1)
+  streakCount      Int      @default(1)
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, activityDate])
+  @@index([userId])
+  @@map("daily_streaks")
+}
+
+model Certificate {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  certificateCode String   @unique
+  userId          String   @db.ObjectId
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId        String   @db.ObjectId
+  course          Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  studentName     String
+  courseTitle     String
+  issueDate       DateTime @default(now())
+  verificationUrl String
+  pdfUrl          String?
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, courseId])
+  @@map("certificates")
+}
+
+// -------------------------------------------------------------------------
+// 5. ASSIGNMENTS & STUDENT SUBMISSIONS
+// -------------------------------------------------------------------------
+
+model Assignment {
+  id           String        @id @default(auto()) @map("_id") @db.ObjectId
+  courseId     String        @db.ObjectId
+  course       Course        @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  moduleId     String?       @db.ObjectId
+  module       CourseModule? @relation(fields: [moduleId], references: [id])
+  title        String
+  description  String
+  instructions String?
+  totalMarks   Int           @default(100)
+  passMarks    Int           @default(50)
+  deadline     DateTime?
+  resources    Json?
+  isPublished  Boolean       @default(true)
+
+  submissions AssignmentSubmission[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([courseId])
+  @@map("assignments")
+}
+
+model AssignmentSubmission {
+  id            String           @id @default(auto()) @map("_id") @db.ObjectId
+  assignmentId  String           @db.ObjectId
+  assignment    Assignment       @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  studentId     String           @db.ObjectId
+  student       User             @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  submissionUrl String
+  notes         String?
+  marks         Int?
+  feedback      String?
+  status        SubmissionStatus @default(SUBMITTED)
+  gradedById    String?          @db.ObjectId
+
+  submittedAt DateTime  @default(now())
+  gradedAt    DateTime?
+
+  @@unique([assignmentId, studentId])
+  @@index([assignmentId])
+  @@index([studentId])
+  @@index([status])
+  @@map("assignment_submissions")
+}
+
+// -------------------------------------------------------------------------
+// 6. MODERATION, NOTIFICATIONS & AUDIT LOGS
+// -------------------------------------------------------------------------
+
+model ModeratorAssignment {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  moderatorId String   @db.ObjectId
+  moderator   User     @relation("ModeratorRelation", fields: [moderatorId], references: [id], onDelete: Cascade)
+  studentId   String   @db.ObjectId
+  student     User     @relation("StudentRelation", fields: [studentId], references: [id], onDelete: Cascade)
+  notes       String?
+  assignedAt  DateTime @default(now())
+
+  @@unique([moderatorId, studentId])
+  @@index([moderatorId])
+  @@index([studentId])
+  @@map("moderator_assignments")
+}
+
+model Notification {
+  id      String           @id @default(auto()) @map("_id") @db.ObjectId
+  userId  String           @db.ObjectId
+  user    User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title   String
+  message String
+  type    NotificationType @default(SYSTEM_UPDATE)
+  isRead  Boolean          @default(false)
+  link    String?
+
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([isRead])
+  @@map("notifications")
+}
+
+model AuditLog {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId     String?  @db.ObjectId
+  user       User?    @relation(fields: [userId], references: [id])
+  action     String // e.g., "COURSE_PUBLISHED", "STUDENT_APPROVED"
+  resource   String // e.g., "Course", "User"
+  resourceId String?
+  details    Json?
+  ipAddress  String?
+
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([action])
+  @@map("audit_logs")
+}

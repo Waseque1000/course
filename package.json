@@ -1,0 +1,17 @@
+{
+  "name": "aura-lms-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aura Learn — Premium LMS Platform (Next.js Frontend + Express.js/PostgreSQL Backend)",
+  "scripts": {
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "start:frontend": "npm --prefix frontend run start",
+    "start:backend": "npm --prefix backend run start",
+    "test:backend": "npm --prefix backend test",
+    "prisma:push": "npm --prefix backend run prisma:push",
+    "seed:backend": "npm --prefix backend run seed"
+  }
+}
+

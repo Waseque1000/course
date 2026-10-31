@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>Aura Learn — Master SEO &amp; Blogging</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+
+    /* Continuous horizontal auto-scrolling marquee for success stories */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 40s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="bg-[#ffffff] font-['Inter',sans-serif] text-slate-800 antialiased min-h-screen relative selection:bg-purple-600 selection:text-white">
+<!-- SUBTLE AMBIENT BACKGROUND ACCENTS -->
+<div class="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_80%_40%_at_50%_-10%,rgba(124,58,237,0.06),rgba(255,255,255,0))]"></div>
+<div class="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_60%_30%_at_80%_30%,rgba(59,130,246,0.04),rgba(255,255,255,0))]"></div>
+<!-- 1. NAVBAR -->
+<header class="sticky top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-[0_1px_6px_rgba(0,0,0,0.02)] transition-all">
+<div class="h-16 w-full max-w-[1360px] mx-auto px-6 lg:px-8 flex items-center justify-between gap-6">
+<!-- Brand Identity -->
+<a class="flex items-center gap-2.5 group" href="#">
+<div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-white shadow-sm shadow-purple-500/20 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[19px]">flare</span>
+</div>
+<span class="font-bold text-slate-900 tracking-tight text-lg">Aura Learn</span>
+</a>
+<!-- Strictly 4 Nav Links -->
+<nav class="hidden md:flex items-center gap-1">
+<a class="px-3.5 py-1.5 rounded-lg text-sm font-semibold text-purple-700 bg-purple-50 hover:bg-purple-100/70 transition-colors" href="#">Home</a>
+<a class="px-3.5 py-1.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#courses">Courses</a>
+<a class="px-3.5 py-1.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#roadmap">Roadmap</a>
+<a class="px-3.5 py-1.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#faq">About</a>
+</nav>
+<!-- Right CTAs -->
+<div class="flex items-center gap-3">
+<a class="text-sm font-medium text-slate-600 hover:text-slate-900 px-3 py-1.5 rounded-lg hover:bg-slate-50 transition-colors" href="#">Sign In</a>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold shadow-sm shadow-purple-600/20 transition-all hover:shadow" href="#courses">
+<span>Get Started</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</header>
+<main class="relative z-10 w-full">
+<!-- 2. HERO SECTION -->
+<section class="relative z-10 w-full max-w-[1360px] mx-auto px-6 lg:px-8 pt-12 pb-16 lg:py-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+<!-- Left Hero Content -->
+<div class="lg:col-span-6 flex flex-col items-start space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-200 shadow-xs">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-500 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-purple-600"></span>
+</span>
+<span class="text-xs font-semibold text-slate-700">Next Cohort Enrolling Now</span>
+<span class="text-slate-300">•</span>
+<span class="text-xs font-semibold text-purple-700">Spring 2025</span>
+</div>
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.12]">
+            Master SEO &amp; Blogging. <br/>
+<span class="bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-500 bg-clip-text text-transparent">Turn Traffic Into Revenue.</span>
+</h1>
+<p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl">
+            Learn step-by-step niche discovery, programmatic SEO, authority blogging, and automated monetization with dedicated mentorship from operators generating 7-figure organic traffic.
+          </p>
+<div class="flex flex-wrap items-center gap-3 pt-2">
+<a class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-purple-600 text-white font-semibold text-sm shadow-md shadow-purple-600/25 hover:bg-purple-700 hover:shadow-lg transition-all" href="#courses">
+<span>Explore 2 Mastercourses</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white text-slate-700 font-semibold text-sm border border-slate-200 hover:bg-slate-50 hover:border-slate-300 transition-all shadow-xs" href="#roadmap">
+<span class="material-symbols-outlined text-purple-600 text-[18px]">route</span>
+<span>View Roadmap</span>
+</a>
+</div>
+<!-- Social Proof -->
+<div class="pt-4 flex flex-wrap items-center gap-4 border-t border-slate-100 w-full">
+<div class="flex -space-x-2">
+<img alt="Learner" class="w-9 h-9 rounded-full ring-2 ring-white object-cover shadow-xs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMcvTIzVrhm21TKj6jvVCeuSeWv2wL0uLNKTaC4J4e-LTd1dgy91RtaME29ZLWUyB2UCIC2jRwDP3cIie1WVwnpKMsZKwD4jTb1Ku4871nkCHA2-qXF6eTl1VQcBqI_XYg7Y47oZvP1thi5oN_bAx5qVMOPFhw460seugS55Lit9e4m1XeZxFyp5487SJMi0_MK60lekVwHLeJxMGRWmwGGcQ75Mo5jtrFnaW8JNWi"/>
+<img alt="Learner" class="w-9 h-9 rounded-full ring-2 ring-white object-cover shadow-xs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCG9PFr1Lc9dzImpHZoXXOyI1aOrV7Kr1jl7zJEzGloeb3JQX7CFBwEc_W-A99A3kgHtJmkNj2InfDx1LabTfcZlx0IQYfbFTcPG9epKTqHLGPva7cRS-6zaiKAOj2nklt1XAo9MFBIRjHly-W91VYLu5g4Ue79mizZl1FsF3eG6EsTb0ZjsXn7K-aMtsd7DkjFzMvgvjnZZhcNT3HeRSs-q2RJ_-NywYtdThMuaDW"/>
+<img alt="Learner" class="w-9 h-9 rounded-full ring-2 ring-white object-cover shadow-xs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJrL89zmhzTTTLZOIso5FkLD66iSun9JV8K8ikfcTolJKKAtCPk7ciaPH0df9jhERZL6uTtQ45bJSk-sb3ChUZYk8qgEgFLuwbGc5WcpGOXRRLoPdLSmTzT5NSOUjmfvhzSSmc_btNSjQw8gKMnwbovfl8oUKXrETi0XVe8bDoAqNc017FDyLpyrL4WDxhdzw01D20hEJVIL-X9HMWgHHXce_o0LMpk8K_zx4FaZ89"/>
+<img alt="Learner" class="w-9 h-9 rounded-full ring-2 ring-white object-cover shadow-xs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsQenfT3tC0uRSWs9htZtD3q-8Ru8FiLPAlMEQSEv4u5QzDa-jQokrylJmYN5YoKMi__k0dD4nwb4T_MNzCyeFzrCGN5HulD8tqZur1iN-DWHHhyTC5NBrMpTitRLvwPMmdvpO2_uj8rksesj6B2Hf3oZWjUFyNBOYNxbr16ieAQQnE_9MoXGf7LspjsOg8mjyKKA7KYFLS9osnwGVWGmZN150gPgv4mxSbzGvUE1N"/>
+<div class="w-9 h-9 rounded-full bg-purple-100 text-purple-700 text-xs font-bold flex items-center justify-center ring-2 ring-white shadow-xs">
+                +18k
+              </div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1 text-amber-500">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold text-slate-900">4.9 / 5</span>
+<span class="text-xs text-slate-500 ml-1">(3,200+ verified ratings)</span>
+</div>
+<span class="text-xs text-slate-500 font-medium">Trusted by 18,000+ niche site builders &amp; content marketers</span>
+</div>
+</div>
+</div>
+<!-- Right Hero Visual: Premium Clean SaaS LMS Preview -->
+<div class="lg:col-span-6 relative flex justify-center items-center">
+<!-- Outer Clean Card Frame -->
+<div class="w-full max-w-lg bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-200/80 p-5 space-y-4 relative">
+<!-- Window Bar -->
+<div class="flex items-center justify-between pb-3 border-b border-slate-100">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-rose-400"></span>
+<span class="w-3 h-3 rounded-full bg-amber-400"></span>
+<span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+<span class="text-xs font-mono text-slate-400 ml-2">analytics.auralearn.io</span>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-semibold text-xs border border-emerald-200/60">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Live Site Connected
+              </span>
+</div>
+<!-- LMS Real-Time Growth Card -->
+<div class="bg-gradient-to-br from-slate-50 to-indigo-50/40 p-4 rounded-xl border border-slate-100 space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Organic Search Sessions</span>
+<div class="text-2xl font-bold text-slate-900 mt-0.5 flex items-baseline gap-2">
+                    124,850 <span class="text-xs font-bold text-emerald-600 bg-emerald-100/60 px-2 py-0.5 rounded-full">+310% Q/Q</span>
+</div>
+</div>
+<div class="text-right">
+<span class="text-xs font-medium text-slate-500">Ad &amp; Affiliate Rev</span>
+<div class="text-base font-bold text-purple-700">$4,820 / mo</div>
+</div>
+</div>
+<!-- Sparkline SVG -->
+<div class="w-full h-16 pt-2">
+<svg class="w-full h-full stroke-purple-600 fill-none" preserveaspectratio="none" viewbox="0 0 300 60">
+<path d="M 0 50 Q 50 45, 90 35 T 160 28 T 220 16 T 300 6" stroke-linecap="round" stroke-width="3"></path>
+<path d="M 0 50 Q 50 45, 90 35 T 160 28 T 220 16 T 300 6 L 300 60 L 0 60 Z" fill="url(#gradient-purple)" opacity="0.15" stroke="none"></path>
+<defs>
+<lineargradient id="gradient-purple" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#9333ea"></stop>
+<stop offset="100%" stop-color="#ffffff"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+<!-- Active Module Progress -->
+<div class="bg-white rounded-xl p-3.5 border border-slate-100 space-y-2">
+<div class="flex items-center justify-between text-xs">
+<span class="font-bold text-slate-800">SEO Zero to Hero • Module 4: Topic Clusters</span>
+<span class="font-semibold text-purple-600">82% Complete</span>
+</div>
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-purple-600 to-indigo-600 h-full rounded-full w-[82%]"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-slate-500 pt-0.5">
+<span>Next: Core Web Vitals Audit on Search Console</span>
+<span class="font-mono text-slate-400">12 min task</span>
+</div>
+</div>
+<!-- Instructor Pill & Quick Action -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2.5">
+<img alt="Mentor" class="w-8 h-8 rounded-full object-cover ring-1 ring-slate-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtkoJiSqJqx9F1qVjFAOPTg4TmQeTDcExKwpSLUvgqCcunufyjzV37idv06pEQsMJ9wgbTAuI8t9Z3KUp2QUhu4Wkk_9sNqOn7Gp5swJc0DDeBW0FU595CR_TuVpkRQNoKdGD6pTkd5ceMLv4EdxveGes1MmxGyLSXgWY5fX_FgKQ30quGOqQyyp6HhRIFcCXjZLCxVibjt8qrHoogA0kwwcoIGOSmYVmBSOtXytI3"/>
+<div>
+<div class="text-xs font-bold text-slate-800">Julian Vance</div>
+<div class="text-[11px] text-slate-500">Head of Growth @ ex-HubSpot</div>
+</div>
+</div>
+<a class="px-3.5 py-1.5 rounded-lg bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 transition-colors flex items-center gap-1 shadow-xs" href="#courses">
+<span>Resume Lesson</span>
+<span class="material-symbols-outlined text-[14px]">play_arrow</span>
+</a>
+</div>
+<!-- Floating Streak Pill -->
+<div class="absolute -top-4 -left-4 bg-white px-3.5 py-2 rounded-xl shadow-lg border border-slate-100 flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div>
+<div class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                  14-Day Writing Streak
+                </div>
+<div class="text-[11px] text-slate-500 font-medium">+240 XP Earned Today</div>
+</div>
+</div>
+<!-- Floating Feedback Pill -->
+<div class="absolute -bottom-4 -right-4 bg-white px-3.5 py-2 rounded-xl shadow-lg border border-slate-100 flex items-center gap-2.5 max-w-[240px]">
+<div class="w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="min-w-0">
+<div class="text-xs font-bold text-slate-900">Score: 98/100 (A+)</div>
+<div class="text-[11px] text-slate-500 truncate">"Flawless semantic markup."</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- KEY STATS STRIP (Clean Modern SaaS Style) -->
+<section class="w-full max-w-[1360px] mx-auto px-6 lg:px-8 py-4 mb-12">
+<div class="bg-slate-50/70 border border-slate-200/70 rounded-2xl p-6 sm:p-8">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-3xl font-extrabold text-slate-900 tracking-tight">18,000+</span>
+<span class="text-[11px] font-bold text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded">Active</span>
+</div>
+<div class="text-xs font-semibold text-slate-700">Enrolled Publishers</div>
+<div class="text-xs text-slate-500">Executing daily SEO &amp; niche builds</div>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-3xl font-extrabold text-slate-900 tracking-tight">4.95 ★</span>
+<span class="text-[11px] font-bold text-purple-700 bg-purple-100 px-1.5 py-0.5 rounded">Top Rated</span>
+</div>
+<div class="text-xs font-semibold text-slate-700">Student Satisfaction</div>
+<div class="text-xs text-slate-500">Based on 3,400+ verified cohort surveys</div>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-3xl font-extrabold text-purple-700 tracking-tight">2 Mastertracks</span>
+<span class="text-[11px] font-bold text-slate-700 bg-slate-200 px-1.5 py-0.5 rounded">Focused</span>
+</div>
+<div class="text-xs font-semibold text-slate-700">Zero Fluff Curriculum</div>
+<div class="text-xs text-slate-500">SEO Zero to Hero &amp; Blogging Master</div>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-3xl font-extrabold text-slate-900 tracking-tight">$4.8M+</span>
+<span class="text-[11px] font-bold text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded">Generated</span>
+</div>
+<div class="text-xs font-semibold text-slate-700">Graduate Portfolio Value</div>
+<div class="text-xs text-slate-500">Tracked affiliate &amp; ad partner payouts</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. STRICTLY ONLY 2 FLAGSHIP MASTERCOURSES -->
+<section class="w-full max-w-[1360px] mx-auto px-6 lg:px-8 py-16 scroll-mt-20" id="courses">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 text-purple-700 text-xs font-bold uppercase tracking-wider">
+          Focused Curriculum
+        </div>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">
+          Our Flagship Mastercourses
+        </h2>
+<p class="text-base text-slate-600 leading-relaxed">
+          Two comprehensive, end-to-end career tracks engineered to take you from initial keyword research to scaled, monetized web properties.
+        </p>
+</div>
+<!-- Strictly 2 Cards Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+<!-- COURSE 1: SEO Zero to Hero -->
+<div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow p-6 sm:p-8 flex flex-col justify-between relative group">
+<div class="space-y-6">
+<!-- Visual Header Preview -->
+<div class="relative aspect-video rounded-xl overflow-hidden bg-slate-900 group-hover:scale-[1.01] transition-transform">
+<div class="w-full h-full bg-cover bg-center flex items-center justify-center relative" style="background-image: linear-gradient(135deg, rgba(15,23,42,0.75), rgba(88,28,135,0.8)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWnH--e0jkLOkQiz4218gRduq4hDbgRuRMq6VCqpgjDfooUjrkHhrLGLO03KkkPXnGGxnL8QFrAjy5gr44Nssiz2N9aIUZeuaj6-43IF-xm6yn43JXX6jBbroJObrJlPL0cpcfxhtLUfL-SQ8jsIAiYox80tzSRfcYN7Y4IVDCvyiXxmv7tSgRsVc_EimZEujaOD83sfQXNSnFCDVCaZ0-Kt225MYOf7O82sTGswIc');">
+<div class="text-center px-4">
+<span class="inline-block px-3 py-1 rounded bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-mono font-bold uppercase tracking-wider mb-2">
+                    Search Engine Optimization
+                  </span>
+<div class="text-white font-bold text-lg sm:text-xl">SEO Zero to Hero</div>
+<div class="text-xs text-purple-200 mt-1 font-mono">Ahrefs • Search Console • Schema • CWV</div>
+</div>
+<!-- Play Overlay Icon -->
+<div class="absolute w-12 h-12 rounded-full bg-white text-purple-700 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<!-- Content Details -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold uppercase tracking-wider">
+                  COMPLETE BLUEPRINT
+                </span>
+<div class="flex items-center gap-1 text-amber-500 text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-slate-900">4.96</span>
+<span class="text-slate-400 font-normal">(3,420 students)</span>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-slate-950 tracking-tight">SEO Zero to Hero</h3>
+<p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                From zero domain authority to 100k+ monthly organic visitors. Master search intent, technical audits, Core Web Vitals, programmatic SEO, and backlink outreach.
+              </p>
+<!-- Highlights Pills -->
+<div class="grid grid-cols-2 gap-2 pt-2 text-xs">
+<div class="flex items-center gap-2 p-2 rounded-lg bg-slate-50 border border-slate-100 text-slate-700">
+<span class="material-symbols-outlined text-purple-600 text-[16px]">menu_book</span>
+<span>38 In-Depth Modules</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-slate-50 border border-slate-100 text-slate-700">
+<span class="material-symbols-outlined text-purple-600 text-[16px]">schedule</span>
+<span>42 Hours Video</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-slate-50 border border-slate-100 text-slate-700">
+<span class="material-symbols-outlined text-purple-600 text-[16px]">analytics</span>
+<span>Live Keyword Teardowns</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-slate-50 border border-slate-100 text-slate-700">
+<span class="material-symbols-outlined text-purple-600 text-[16px]">person_celebrate</span>
+<span>1-on-1 Mentor Reviews</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CTAs -->
+<div class="flex items-center gap-3 pt-6 mt-6 border-t border-slate-100">
+<a class="flex-1 text-center py-3 px-4 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-semibold text-sm shadow-sm transition-all" href="#">
+              Enroll in SEO Track
+            </a>
+<a class="text-center py-3 px-4 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-semibold text-sm transition-all" href="#">
+              View Curriculum
+            </a>
+</div>
+</div>
+<!-- COURSE 2: Blogging Master -->
+<div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow p-6 sm:p-8 flex flex-col justify-between relative group">
+<div class="space-y-6">
+<!-- Visual Header Preview -->
+<div class="relative aspect-video rounded-xl overflow-hidden bg-slate-900 group-hover:scale-[1.01] transition-transform">
+<div class="w-full h-full bg-cover bg-center flex items-center justify-center relative" style="background-image: linear-gradient(135deg, rgba(15,23,42,0.75), rgba(13,148,136,0.8)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCek0ylWQw7XDXPZX_tW_grqNG5tqdVBi0Fbs8H2K1ekvGjxawuhGiK0hZlXnyRhZagEB10b1OpKGo-MyPvdkkTcSCZL1Y6tYk3RNaefIhAGISf7xf_L4ox33DGCJSZen8MejOcm-16ylK1-d-umgZ-Ei6QlQg72tIsvvL-GpbJCItUjV6nKhhp8sk85SjDuk8SOVNOx9GbZHrsQe7IgWlmpq1hQ6783uqcdC_or6AV');">
+<div class="text-center px-4">
+<span class="inline-block px-3 py-1 rounded bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-mono font-bold uppercase tracking-wider mb-2">
+                    Media &amp; Monetization
+                  </span>
+<div class="text-white font-bold text-lg sm:text-xl">Blogging Master</div>
+<div class="text-xs text-teal-200 mt-1 font-mono">Mediavine • Affiliates • AdThrive • AI Systems</div>
+</div>
+<!-- Play Overlay Icon -->
+<div class="absolute w-12 h-12 rounded-full bg-white text-teal-700 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<!-- Content Details -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-bold uppercase tracking-wider">
+                  CONTENT &amp; MONETIZATION
+                </span>
+<div class="flex items-center gap-1 text-amber-500 text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-slate-900">4.94</span>
+<span class="text-slate-400 font-normal">(2,810 students)</span>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-slate-950 tracking-tight">Blogging Master</h3>
+<p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                Build high-earning affiliate and media blogs that print sustainable passive revenue. Master editorial systems, high-paying ad networks (Mediavine/AdThrive), and sponsor acquisition.
+              </p>
+<!-- Highlights Pills -->
+<div class="grid grid-cols-2 gap-2 pt-2 text-xs">
+<div class="flex items-center gap-2 p-2 rounded-lg bg-slate-50 border border-slate-100 text-slate-700">
+<span class="material-symbols-outlined text-teal-600 text-[16px]">menu_book</span>
+<span>32 Modules</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-slate-50 border border-slate-100 text-slate-700">
+<span class="material-symbols-outlined text-teal-600 text-[16px]">schedule</span>
+<span>36 Hours Content</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-slate-50 border border-slate-100 text-slate-700">
+<span class="material-symbols-outlined text-teal-600 text-[16px]">payments</span>
+<span>Real Affiliate Case Studies</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-slate-50 border border-slate-100 text-slate-700">
+<span class="material-symbols-outlined text-teal-600 text-[16px]">auto_stories</span>
+<span>AI Editorial Workflows</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CTAs -->
+<div class="flex items-center gap-3 pt-6 mt-6 border-t border-slate-100">
+<a class="flex-1 text-center py-3 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm shadow-sm transition-all" href="#">
+              Enroll in Blogging Track
+            </a>
+<a class="text-center py-3 px-4 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-semibold text-sm transition-all" href="#">
+              View Curriculum
+            </a>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. 3-STEP ROADMAP (CLEAN WHITE/LIGHT CONTAINER) -->
+<section class="w-full max-w-[1360px] mx-auto px-6 lg:px-8 py-16 scroll-mt-20" id="roadmap">
+<div class="bg-slate-50/90 border border-slate-200 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-xs">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Left: Clean Light Interactive Quiz Phone Simulator -->
+<div class="lg:col-span-5 flex justify-center">
+<div class="w-full max-w-[320px] bg-white border border-slate-200 rounded-[36px] p-5 shadow-xl shadow-slate-200/50 text-slate-800">
+<!-- Phone Status Header -->
+<div class="flex items-center justify-between text-xs text-slate-400 pb-3">
+<span class="font-bold text-slate-700">9:41</span>
+<div class="w-16 h-3.5 bg-slate-200 rounded-full mx-auto -mt-1"></div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">wifi</span>
+<span class="material-symbols-outlined text-[13px]">battery_full</span>
+</div>
+</div>
+<!-- Top Quiz Controls -->
+<div class="flex items-center justify-between pb-3">
+<span class="material-symbols-outlined text-slate-400 text-[18px]">close</span>
+<!-- Progress Indicators -->
+<div class="flex items-center gap-1">
+<span class="w-3 h-5 rounded-full bg-purple-600 shadow-xs"></span>
+<span class="w-3 h-5 rounded-full bg-purple-600"></span>
+<span class="w-3 h-5 rounded-full bg-purple-200"></span>
+<span class="w-3 h-5 rounded-full bg-slate-100"></span>
+</div>
+<!-- Lives Badge -->
+<div class="flex items-center gap-1 bg-rose-50 border border-rose-200 px-2 py-0.5 rounded-full text-xs font-bold text-rose-600">
+<span>❤️</span>
+<span>5/5</span>
+</div>
+</div>
+<!-- Question Box -->
+<div class="space-y-1.5 my-3">
+<span class="text-[10px] font-bold uppercase tracking-wider text-purple-600">SEO Daily Mission #42</span>
+<h4 class="text-sm font-bold text-slate-900">Which tag best avoids duplicate content penalty on search engines?</h4>
+</div>
+<!-- Code Preview inside Phone -->
+<div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5 my-3 text-[11px] font-mono text-slate-700">
+<div class="text-slate-400 text-[10px] pb-1">&lt;head&gt;</div>
+<div class="text-purple-700 font-semibold pl-2">&lt;link rel="canonical" href="..." /&gt;</div>
+<div class="text-slate-400 text-[10px] pt-1">&lt;/head&gt;</div>
+</div>
+<!-- Options -->
+<div class="space-y-2 mb-3">
+<button class="w-full text-left py-2 px-3 rounded-lg border-2 border-purple-600 bg-purple-50/60 text-purple-900 font-semibold text-xs transition-all flex items-center justify-between">
+<span>rel="canonical"</span>
+<span class="material-symbols-outlined text-purple-600 text-[16px]">check_circle</span>
+</button>
+<button class="w-full text-left py-2 px-3 rounded-lg border border-slate-200 hover:border-slate-300 text-slate-700 text-xs transition-all">
+<span>rel="nofollow"</span>
+</button>
+<button class="w-full text-left py-2 px-3 rounded-lg border border-slate-200 hover:border-slate-300 text-slate-700 text-xs transition-all">
+<span>meta robots="noindex"</span>
+</button>
+</div>
+<!-- Bottom Indicator -->
+<div class="flex items-center justify-center gap-1 pt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+<span class="w-4 h-1.5 rounded-full bg-purple-600"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+</div>
+</div>
+</div>
+<!-- Right: 3 Clear Steps -->
+<div class="lg:col-span-7 space-y-8">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-bold uppercase tracking-wider mb-3">
+                Clear Progression
+              </div>
+<h3 class="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight">
+                FROM ZERO TO YOUR FIRST REAL PROJECT IN 3 STEPS
+              </h3>
+<p class="text-slate-600 text-sm sm:text-base mt-2">
+                No endless theory videos. From Day 1, you follow an action-driven blueprint designed to get pages indexed, ranked, and monetized.
+              </p>
+</div>
+<div class="space-y-6 relative before:absolute before:top-4 before:bottom-4 before:left-6 before:w-0.5 before:bg-slate-200">
+<!-- Step 1 -->
+<div class="relative flex items-start gap-4">
+<div class="relative z-10 w-12 h-12 rounded-xl bg-purple-100 border border-purple-200 text-purple-700 flex items-center justify-center font-bold text-base flex-shrink-0 shadow-xs">
+<span class="material-symbols-outlined text-[22px]">route</span>
+</div>
+<div class="pt-1">
+<h4 class="text-base font-bold text-slate-900">1. Pick your path</h4>
+<p class="text-slate-600 text-sm mt-0.5">
+                    Choose between <strong class="text-slate-900">SEO Zero to Hero</strong> or <strong class="text-slate-900">Blogging Master</strong> based on your goals—rank client sites or build your own media portfolio.
+                  </p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative flex items-start gap-4">
+<div class="relative z-10 w-12 h-12 rounded-xl bg-indigo-100 border border-indigo-200 text-indigo-700 flex items-center justify-center font-bold text-base flex-shrink-0 shadow-xs">
+<span class="material-symbols-outlined text-[22px]">timer</span>
+</div>
+<div class="pt-1">
+<h4 class="text-base font-bold text-slate-900">2. Complete your 10-minute daily mission</h4>
+<p class="text-slate-600 text-sm mt-0.5">
+                    Daily ranking audits, keyword gap teardowns, and content sprints that fit effortlessly into your routine while building genuine compounding momentum.
+                  </p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative flex items-start gap-4">
+<div class="relative z-10 w-12 h-12 rounded-xl bg-emerald-100 border border-emerald-200 text-emerald-700 flex items-center justify-center font-bold text-base flex-shrink-0 shadow-xs">
+<span class="material-symbols-outlined text-[22px]">monetization_on</span>
+</div>
+<div class="pt-1">
+<h4 class="text-base font-bold text-slate-900">3. Ship a revenue-generating asset</h4>
+<p class="text-slate-600 text-sm mt-0.5">
+                    Every track finishes with real published URLs indexing on Google, traffic metrics flowing into Search Console, and active affiliate monetization in place.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. SUCCESS STORIES CAROUSEL (CRISP LIGHT THEME) -->
+<section class="w-full py-16 overflow-hidden border-t border-b border-slate-100 bg-slate-50/50" id="success-stories">
+<!-- Section Header -->
+<div class="text-center max-w-xl mx-auto mb-12 px-6 space-y-2">
+<h2 class="text-3xl font-extrabold text-slate-950 tracking-tight">
+          Success Stories
+        </h2>
+<p class="text-sm sm:text-base text-slate-600">
+          Real publishers and SEO strategists who built authority and transformed their income with Aura Learn.
+        </p>
+</div>
+<!-- Marquee Wrapper -->
+<div class="relative w-full overflow-hidden py-3">
+<!-- Edge Fades -->
+<div class="pointer-events-none absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-50/90 to-transparent z-20"></div>
+<div class="pointer-events-none absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-50/90 to-transparent z-20"></div>
+<div class="animate-marquee flex gap-6 px-6">
+<!-- Card 1 -->
+<div class="w-[340px] sm:w-[380px] bg-white rounded-2xl p-6 border border-slate-200/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between flex-shrink-0">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-3xl font-serif text-purple-400 leading-none">“</span>
+<span class="px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 font-bold text-xs border border-purple-100">Batch 12</span>
+</div>
+<p class="text-slate-700 text-sm leading-relaxed mb-6 font-medium">
+                "Taking the SEO Zero to Hero blueprint took my affiliate review site from 400 visits to 84,000 monthly pageviews. The programmatic schema modules alone paid for the entire course tenfold."
+              </p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+<img alt="Ehasun Ul Islam" class="w-11 h-11 rounded-full object-cover ring-2 ring-purple-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMcvTIzVrhm21TKj6jvVCeuSeWv2wL0uLNKTaC4J4e-LTd1dgy91RtaME29ZLWUyB2UCIC2jRwDP3cIie1WVwnpKMsZKwD4jTb1Ku4871nkCHA2-qXF6eTl1VQcBqI_XYg7Y47oZvP1thi5oN_bAx5qVMOPFhw460seugS55Lit9e4m1XeZxFyp5487SJMi0_MK60lekVwHLeJxMGRWmwGGcQ75Mo5jtrFnaW8JNWi"/>
+<div>
+<h4 class="font-bold text-slate-900 text-sm">Ehasun Ul Islam</h4>
+<p class="text-xs text-purple-700 font-semibold">SEO Strategist &amp; Publisher</p>
+<p class="text-[11px] text-slate-400">Hits $5,200/mo Organic Revenue</p>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="w-[340px] sm:w-[380px] bg-white rounded-2xl p-6 border border-slate-200/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between flex-shrink-0">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-3xl font-serif text-teal-400 leading-none">“</span>
+<span class="px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-700 font-bold text-xs border border-teal-100">Batch 10</span>
+</div>
+<p class="text-slate-700 text-sm leading-relaxed mb-6 font-medium">
+                "The Blogging Master course taught me how to apply and qualify for premium ad networks like Mediavine. Within 4 months of launching my outdoor niche site, we hit the 50k sessions threshold."
+              </p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+<img alt="Md Sayeed Alam" class="w-11 h-11 rounded-full object-cover ring-2 ring-teal-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJrL89zmhzTTTLZOIso5FkLD66iSun9JV8K8ikfcTolJKKAtCPk7ciaPH0df9jhERZL6uTtQ45bJSk-sb3ChUZYk8qgEgFLuwbGc5WcpGOXRRLoPdLSmTzT5NSOUjmfvhzSSmc_btNSjQw8gKMnwbovfl8oUKXrETi0XVe8bDoAqNc017FDyLpyrL4WDxhdzw01D20hEJVIL-X9HMWgHHXce_o0LMpk8K_zx4FaZ89"/>
+<div>
+<h4 class="font-bold text-slate-900 text-sm">Md Sayeed Alam</h4>
+<p class="text-xs text-teal-700 font-semibold">Mediavine Publisher</p>
+<p class="text-[11px] text-slate-400">Founder @ WanderGear Media</p>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="w-[340px] sm:w-[380px] bg-white rounded-2xl p-6 border border-slate-200/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between flex-shrink-0">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-3xl font-serif text-indigo-400 leading-none">“</span>
+<span class="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 font-bold text-xs border border-indigo-100">Batch 10</span>
+</div>
+<p class="text-slate-700 text-sm leading-relaxed mb-6 font-medium">
+                "I was skeptical about AI in content, but Julian showed us how to build hybrid editorial pipelines that Google's Helpful Content System actually rewards. Highest ROI course I've bought."
+              </p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+<img alt="Ashrafuzzaman Azad" class="w-11 h-11 rounded-full object-cover ring-2 ring-indigo-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsQenfT3tC0uRSWs9htZtD3q-8Ru8FiLPAlMEQSEv4u5QzDa-jQokrylJmYN5YoKMi__k0dD4nwb4T_MNzCyeFzrCGN5HulD8tqZur1iN-DWHHhyTC5NBrMpTitRLvwPMmdvpO2_uj8rksesj6B2Hf3oZWjUFyNBOYNxbr16ieAQQnE_9MoXGf7LspjsOg8mjyKKA7KYFLS9osnwGVWGmZN150gPgv4mxSbzGvUE1N"/>
+<div>
+<h4 class="font-bold text-slate-900 text-sm">Ashrafuzzaman Azad</h4>
+<p class="text-xs text-indigo-700 font-semibold">Content Operations Lead</p>
+<p class="text-[11px] text-slate-400">Portfolio of 6 Monetized Sites</p>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="w-[340px] sm:w-[380px] bg-white rounded-2xl p-6 border border-slate-200/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between flex-shrink-0">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-3xl font-serif text-amber-400 leading-none">“</span>
+<span class="px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-700 font-bold text-xs border border-amber-100">Batch 10</span>
+</div>
+<p class="text-slate-700 text-sm leading-relaxed mb-6 font-medium">
+                "The 10-minute daily missions kept me consistent. Instead of procrastinating on blog posts, I published 35 ranking articles in 60 days and landed 2 private high-ticket sponsorships."
+              </p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+<img alt="Khushi Akter Hena" class="w-11 h-11 rounded-full object-cover ring-2 ring-amber-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCG9PFr1Lc9dzImpHZoXXOyI1aOrV7Kr1jl7zJEzGloeb3JQX7CFBwEc_W-A99A3kgHtJmkNj2InfDx1LabTfcZlx0IQYfbFTcPG9epKTqHLGPva7cRS-6zaiKAOj2nklt1XAo9MFBIRjHly-W91VYLu5g4Ue79mizZl1FsF3eG6EsTb0ZjsXn7K-aMtsd7DkjFzMvgvjnZZhcNT3HeRSs-q2RJ_-NywYtdThMuaDW"/>
+<div>
+<h4 class="font-bold text-slate-900 text-sm">Khushi Akter Hena</h4>
+<p class="text-xs text-amber-700 font-semibold">Niche Site Entrepreneur</p>
+<p class="text-[11px] text-slate-400">Full-Time Digital Creator</p>
+</div>
+</div>
+</div>
+<!-- DUPLICATE SET FOR SMOOTH INFINITE MARQUEE -->
+<div class="w-[340px] sm:w-[380px] bg-white rounded-2xl p-6 border border-slate-200/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between flex-shrink-0">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-3xl font-serif text-purple-400 leading-none">“</span>
+<span class="px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 font-bold text-xs border border-purple-100">Batch 12</span>
+</div>
+<p class="text-slate-700 text-sm leading-relaxed mb-6 font-medium">
+                "Taking the SEO Zero to Hero blueprint took my affiliate review site from 400 visits to 84,000 monthly pageviews. The programmatic schema modules alone paid for the entire course tenfold."
+              </p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+<img alt="Ehasun Ul Islam" class="w-11 h-11 rounded-full object-cover ring-2 ring-purple-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMcvTIzVrhm21TKj6jvVCeuSeWv2wL0uLNKTaC4J4e-LTd1dgy91RtaME29ZLWUyB2UCIC2jRwDP3cIie1WVwnpKMsZKwD4jTb1Ku4871nkCHA2-qXF6eTl1VQcBqI_XYg7Y47oZvP1thi5oN_bAx5qVMOPFhw460seugS55Lit9e4m1XeZxFyp5487SJMi0_MK60lekVwHLeJxMGRWmwGGcQ75Mo5jtrFnaW8JNWi"/>
+<div>
+<h4 class="font-bold text-slate-900 text-sm">Ehasun Ul Islam</h4>
+<p class="text-xs text-purple-700 font-semibold">SEO Strategist &amp; Publisher</p>
+<p class="text-[11px] text-slate-400">Hits $5,200/mo Organic Revenue</p>
+</div>
+</div>
+</div>
+<div class="w-[340px] sm:w-[380px] bg-white rounded-2xl p-6 border border-slate-200/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between flex-shrink-0">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-3xl font-serif text-teal-400 leading-none">“</span>
+<span class="px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-700 font-bold text-xs border border-teal-100">Batch 10</span>
+</div>
+<p class="text-slate-700 text-sm leading-relaxed mb-6 font-medium">
+                "The Blogging Master course taught me how to apply and qualify for premium ad networks like Mediavine. Within 4 months of launching my outdoor niche site, we hit the 50k sessions threshold."
+              </p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+<img alt="Md Sayeed Alam" class="w-11 h-11 rounded-full object-cover ring-2 ring-teal-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJrL89zmhzTTTLZOIso5FkLD66iSun9JV8K8ikfcTolJKKAtCPk7ciaPH0df9jhERZL6uTtQ45bJSk-sb3ChUZYk8qgEgFLuwbGc5WcpGOXRRLoPdLSmTzT5NSOUjmfvhzSSmc_btNSjQw8gKMnwbovfl8oUKXrETi0XVe8bDoAqNc017FDyLpyrL4WDxhdzw01D20hEJVIL-X9HMWgHHXce_o0LMpk8K_zx4FaZ89"/>
+<div>
+<h4 class="font-bold text-slate-900 text-sm">Md Sayeed Alam</h4>
+<p class="text-xs text-teal-700 font-semibold">Mediavine Publisher</p>
+<p class="text-[11px] text-slate-400">Founder @ WanderGear Media</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. OUR MOBILE APP SECTION (CLEAN WHITE/LIGHT THEME) -->
+<section class="w-full max-w-[1360px] mx-auto px-6 lg:px-8 py-20" id="mobile-app">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+<!-- Left: Realistic Clean Light Phone Mockup -->
+<div class="lg:col-span-5 flex justify-center">
+<div class="relative w-[290px] sm:w-[310px] bg-white border-[6px] border-slate-200 rounded-[44px] p-4 shadow-xl shadow-slate-200/60 ring-1 ring-slate-100">
+<!-- Notch -->
+<div class="w-24 h-4 bg-slate-100 rounded-full mx-auto mb-3"></div>
+<!-- In-App Header -->
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-1.5">
+<div class="w-6 h-6 rounded-md bg-purple-600 text-white font-bold text-xs flex items-center justify-center">A</div>
+<span class="font-bold text-xs text-slate-900">Aura Learn</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-slate-100 text-[10px] font-bold text-slate-700">💎 140 XP</span>
+<span class="material-symbols-outlined text-[16px] text-slate-400">notifications</span>
+</div>
+</div>
+<!-- In-App Search -->
+<div class="bg-slate-50 border border-slate-200 rounded-xl px-2.5 py-1.5 flex items-center gap-2 text-xs text-slate-400 mb-3">
+<span class="material-symbols-outlined text-[14px]">search</span>
+<span class="text-[11px]">Search lessons, keywords...</span>
+</div>
+<!-- Course Track 1 In-App -->
+<div class="space-y-2 mb-3">
+<div class="text-[11px] font-bold text-slate-800">Your Active Tracks</div>
+<div class="p-2.5 rounded-xl border border-purple-100 bg-purple-50/50 space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-bold text-purple-700 uppercase">SEO Zero to Hero</span>
+<span class="text-[10px] font-bold text-slate-500">64%</span>
+</div>
+<div class="w-full bg-purple-100 h-1.5 rounded-full">
+<div class="bg-purple-600 h-1.5 rounded-full w-[64%]"></div>
+</div>
+<div class="text-[10px] text-slate-500 truncate">Next: Backlink Outreach Template</div>
+</div>
+</div>
+<!-- Track 2 In-App -->
+<div class="p-2.5 rounded-xl border border-slate-200 bg-white space-y-1.5 mb-4">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-bold text-slate-700 uppercase">Blogging Master</span>
+<span class="text-[10px] font-bold text-slate-400">Enroll</span>
+</div>
+<div class="text-[10px] text-slate-500">32 Modules on Media Monetization</div>
+</div>
+<!-- Bottom App Navigation -->
+<div class="pt-2 border-t border-slate-100 flex items-center justify-around text-slate-400 text-[9px]">
+<div class="flex flex-col items-center text-purple-700 font-bold">
+<span class="material-symbols-outlined text-[18px]">home</span>
+<span>Learn</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-[18px]">checklist</span>
+<span>Missions</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+<span>Community</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span>Profile</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Mobile Showcase Details -->
+<div class="lg:col-span-7 space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold uppercase tracking-wider">
+            Anywhere, Anytime
+          </div>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight leading-tight">
+            Learn On The Go With Our Mobile App
+          </h2>
+<!-- Clean Metrics Pill Card -->
+<div class="bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 rounded-2xl p-6 sm:p-7 shadow-lg shadow-purple-600/15 text-white">
+<div class="grid grid-cols-3 gap-3 text-center divide-x divide-white/20">
+<div class="px-2">
+<div class="text-2xl sm:text-3xl font-extrabold">1.5M+</div>
+<div class="text-xs text-purple-100 mt-1">Worldwide Learners</div>
+</div>
+<div class="px-2">
+<div class="text-2xl sm:text-3xl font-extrabold">4.7 ★</div>
+<div class="text-xs text-purple-100 mt-1">Positive Reviews</div>
+</div>
+<div class="px-2">
+<div class="text-2xl sm:text-3xl font-extrabold">2 Tracks</div>
+<div class="text-xs text-purple-100 mt-1">Flagship Masteries</div>
+</div>
+</div>
+</div>
+<p class="text-base text-slate-600 leading-relaxed max-w-xl">
+            Learn SEO audits, keyword analysis, and content monetization the convenient way with the Aura Learn app. Practice 10-minute micro-lessons during your commute, earn streaks, and review assignments on iOS or Android.
+          </p>
+<!-- Store Badges -->
+<div class="flex flex-wrap items-center gap-3 pt-2">
+<a class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white shadow-sm transition-all" href="#">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24">
+<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.47c.63-.78 1.07-1.85.95-2.94-.95.04-2.07.64-2.73 1.42-.58.67-1.1 1.76-.96 2.82 1.05.08 2.11-.53 2.74-1.3"></path>
+</svg>
+<div class="text-left leading-none">
+<div class="text-[9px] uppercase text-slate-300">Download on the</div>
+<div class="text-sm font-bold mt-1">App Store</div>
+</div>
+</a>
+<a class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white shadow-sm transition-all" href="#">
+<svg class="w-6 h-6" viewbox="0 0 24 24">
+<path d="M3.6 1.8L13.8 12 3.6 22.2c-.4-.4-.6-1-.6-1.7V3.5c0-.7.2-1.3.6-1.7z" fill="#4285F4"></path>
+<path d="M17.3 8.6L14.7 11.2 13.8 12l2.6 2.6 2.6-1.5c.8-.5 1.2-1.2 1.2-1.9s-.4-1.4-1.2-1.9l-1.7-.7z" fill="#FBBC04"></path>
+<path d="M3.6 22.2l10.2-10.2 3.5 3.5-11.6 6.7c-.8.5-1.5.3-2.1 0z" fill="#34A853"></path>
+<path d="M3.6 1.8l13.7 7.9-3.5 3.5-10.2-10.2c.6-.3 1.3-.5 2.1-.2z" fill="#EA4335"></path>
+</svg>
+<div class="text-left leading-none">
+<div class="text-[9px] uppercase text-slate-300">GET IT ON</div>
+<div class="text-sm font-bold mt-1">Google Play</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. STUDENT EXPERIENCE DASHBOARD -->
+<section class="w-full max-w-[1360px] mx-auto px-6 lg:px-8 py-12">
+<div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-10 lg:p-12">
+<div class="max-w-2xl mb-8 space-y-2">
+<span class="text-xs font-bold text-purple-700 bg-purple-100 px-3 py-1 rounded-full uppercase tracking-wider">
+            Student Companion
+          </span>
+<h2 class="text-2xl sm:text-3xl font-extrabold text-slate-950">
+            A Distraction-Free Portal Engineered for Execution
+          </h2>
+<p class="text-sm sm:text-base text-slate-600">
+            Track indexed pages, monitor homework evaluations, and schedule 1-on-1 mentor critiques effortlessly.
+          </p>
+</div>
+<!-- Dashboard UI Mockup Frame -->
+<div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+<!-- Top Window Bar -->
+<div class="bg-slate-100/70 px-5 py-3 flex items-center justify-between border-b border-slate-200">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-400"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+<span class="text-xs font-medium text-slate-500 ml-3">student.auralearn.io / overview</span>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-medium border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Synced Just Now
+            </span>
+</div>
+<!-- Inside Bento -->
+<div class="p-6 sm:p-8 space-y-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100">
+<div>
+<h3 class="text-xl font-bold text-slate-900">Welcome back, Sarah Chen 👋</h3>
+<p class="text-xs sm:text-sm text-slate-500">You're on track to publish your 15th pillar article this sprint.</p>
+</div>
+<div class="text-left sm:text-right">
+<div class="text-xs text-slate-400 font-semibold uppercase">Organic Reach Index</div>
+<div class="text-lg font-bold text-purple-700">Top 4% of Cohort</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Active Course Box -->
+<div class="lg:col-span-8 bg-slate-50 rounded-xl p-5 border border-slate-200/80 space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold px-2 py-0.5 rounded bg-purple-100 text-purple-700">CURRENT TRACK</span>
+<span class="text-xs text-slate-500">Last accessed today</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-slate-900">SEO Zero to Hero</h4>
+<p class="text-xs sm:text-sm text-slate-600 mt-1">Module 7: Link Velocity &amp; Broken Backlink Replacement outreach strategy.</p>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between text-xs font-semibold">
+<span class="text-slate-700">Course Progress</span>
+<span class="text-purple-700 font-mono">24 / 38 Modules (63%)</span>
+</div>
+<div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+<div class="bg-purple-600 h-full rounded-full w-[63%]"></div>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+<span class="text-xs text-slate-500 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">schedule</span> Est. 25m remaining
+                  </span>
+<a class="px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold transition-all inline-flex items-center gap-1" href="#courses">
+<span>Continue Lesson</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Today's Checklist -->
+<div class="lg:col-span-4 bg-slate-50 rounded-xl p-5 border border-slate-200/80 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<h4 class="text-sm font-bold text-slate-900">Today's Focus</h4>
+<span class="text-xs font-mono font-bold text-purple-700">2 / 3 Done</span>
+</div>
+<div class="space-y-2 text-xs">
+<div class="p-2 rounded-lg bg-white border border-slate-200 flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check_box</span>
+<span class="line-through text-slate-400">Perform SERP intent breakdown</span>
+</div>
+<div class="p-2 rounded-lg bg-white border border-slate-200 flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check_box</span>
+<span class="line-through text-slate-400">Implement FAQ Schema tags</span>
+</div>
+<div class="p-2 rounded-lg bg-white border border-purple-200 flex items-center gap-2 font-medium text-slate-800">
+<span class="material-symbols-outlined text-purple-600 text-[18px]">check_box_outline_blank</span>
+<span>Review affiliate program approvals</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs">
+<span class="text-slate-500">Streak Status</span>
+<span class="font-bold text-amber-600">🔥 14 Days Active</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. FAQ ACCORDION -->
+<section class="w-full max-w-[900px] mx-auto px-6 lg:px-8 py-16 scroll-mt-20" id="faq">
+<div class="text-center space-y-2 mb-10">
+<span class="text-xs font-bold text-purple-700 uppercase tracking-wider">Common Questions</span>
+<h2 class="text-3xl font-extrabold text-slate-950">Everything You Need to Know</h2>
+<p class="text-sm sm:text-base text-slate-600">Clear answers regarding courses, access, monetization, and mentorship.</p>
+</div>
+<div class="space-y-3">
+<details class="group bg-white rounded-xl p-5 border border-slate-200 shadow-xs open:shadow-sm transition-all">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-slate-900 text-sm sm:text-base">
+<span>Can I enroll in both SEO Zero to Hero and Blogging Master?</span>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 group-open:text-purple-600 transition-transform text-[20px]">expand_more</span>
+</summary>
+<div class="mt-3 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Yes! Many learners take both or bundle them. The SEO track equips you to master technical search algorithms and rankings, while the Blogging Master track focuses intensely on editorial velocity, affiliate partnerships, and high-CPM display ad networks.
+          </div>
+</details>
+<details class="group bg-white rounded-xl p-5 border border-slate-200 shadow-xs open:shadow-sm transition-all">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-slate-900 text-sm sm:text-base">
+<span>Do I need prior coding or technical skills to start?</span>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 group-open:text-purple-600 transition-transform text-[20px]">expand_more</span>
+</summary>
+<div class="mt-3 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            No technical background is required. We teach you step-by-step from domain setup and WordPress/Ghost configuration to no-code schema deployment, standard HTML markup, and automated AI assistance.
+          </div>
+</details>
+<details class="group bg-white rounded-xl p-5 border border-slate-200 shadow-xs open:shadow-sm transition-all">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-slate-900 text-sm sm:text-base">
+<span>How does the 1-on-1 mentor review process work?</span>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 group-open:text-purple-600 transition-transform text-[20px]">expand_more</span>
+</summary>
+<div class="mt-3 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            At key project milestones (such as your keyword map, site architecture audit, or capstone affiliate article), you submit your work to our instructor review portal. You receive structured video teardowns and written feedback within 48 hours.
+          </div>
+</details>
+<details class="group bg-white rounded-xl p-5 border border-slate-200 shadow-xs open:shadow-sm transition-all">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-slate-900 text-sm sm:text-base">
+<span>Is there a refund policy if it's not right for me?</span>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 group-open:text-purple-600 transition-transform text-[20px]">expand_more</span>
+</summary>
+<div class="mt-3 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            We provide a 14-day, 100% money-back guarantee. If you complete the initial modules and feel the curriculum doesn't provide tremendous practical value, simply email support for an immediate full refund.
+          </div>
+</details>
+</div>
+</section>
+<!-- 9. FINAL HIGH-CONVERSION CTA BANNER -->
+<section class="w-full max-w-[1360px] mx-auto px-6 lg:px-8 py-16">
+<div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-purple-700 via-indigo-700 to-purple-800 p-8 sm:p-12 lg:p-16 text-center text-white shadow-xl shadow-purple-900/10">
+<div class="relative z-10 max-w-2xl mx-auto space-y-6">
+<span class="inline-block px-3 py-1 rounded-full bg-white/15 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wider">
+            LIMITED SEATS PER COHORT
+          </span>
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+            Start Building Your Monetized Publishing Asset Today.
+          </h2>
+<p class="text-sm sm:text-base text-purple-100 leading-relaxed">
+            Join 18,000+ publishers mastering high-intent search traffic and building durable, monetized web assets with direct mentor guidance.
+          </p>
+<div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+<a class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-purple-700 font-bold text-sm shadow-md hover:bg-slate-50 transition-all" href="#courses">
+<span>Explore Mastercourses</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/15 hover:bg-white/20 text-white font-semibold text-sm transition-all border border-white/20" href="#roadmap">
+<span>View Curriculum</span>
+</a>
+</div>
+<div class="pt-2 flex flex-wrap items-center justify-center gap-5 text-xs text-purple-200">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">check_circle</span> 14-day refund guarantee</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">check_circle</span> Lifetime course access</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">check_circle</span> Mentor community access</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER (CLEAN LIGHT THEME) -->
+<footer class="w-full bg-white border-t border-slate-200/80 pt-16 pb-12">
+<div class="w-full max-w-[1360px] mx-auto px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-100">
+<!-- Col 1: Brand & Bio -->
+<div class="lg:col-span-2 space-y-4">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-white shadow-xs">
+<span class="material-symbols-outlined text-[16px]">flare</span>
+</div>
+<span class="font-bold text-slate-900 text-lg">Aura Learn</span>
+</div>
+<p class="text-sm text-slate-500 max-w-sm leading-relaxed">
+            The premier learning platform for modern SEO specialists, niche site operators, and high-earning digital media publishers.
+          </p>
+<div class="text-xs text-slate-400">
+            © 2025 Aura Learn Inc. All rights reserved.
+          </div>
+</div>
+<!-- Col 2: Courses -->
+<div class="space-y-3">
+<h4 class="text-xs font-bold uppercase tracking-wider text-slate-900">Mastercourses</h4>
+<ul class="space-y-2 text-sm text-slate-600">
+<li><a class="hover:text-purple-600 transition-colors" href="#courses">SEO Zero to Hero</a></li>
+<li><a class="hover:text-purple-600 transition-colors" href="#courses">Blogging Master</a></li>
+<li><a class="hover:text-purple-600 transition-colors" href="#roadmap">3-Step Roadmap</a></li>
+<li><a class="hover:text-purple-600 transition-colors" href="#success-stories">Success Stories</a></li>
+</ul>
+</div>
+<!-- Col 3: Platform -->
+<div class="space-y-3">
+<h4 class="text-xs font-bold uppercase tracking-wider text-slate-900">Platform</h4>
+<ul class="space-y-2 text-sm text-slate-600">
+<li><a class="hover:text-purple-600 transition-colors" href="#mobile-app">iOS Mobile App</a></li>
+<li><a class="hover:text-purple-600 transition-colors" href="#mobile-app">Android Play Store App</a></li>
+<li><a class="hover:text-purple-600 transition-colors" href="#">Student Dashboard</a></li>
+<li><a class="hover:text-purple-600 transition-colors" href="#">Live Mentor Office Hours</a></li>
+</ul>
+</div>
+<!-- Col 4: Company -->
+<div class="space-y-3">
+<h4 class="text-xs font-bold uppercase tracking-wider text-slate-900">Company</h4>
+<ul class="space-y-2 text-sm text-slate-600">
+<li><a class="hover:text-purple-600 transition-colors" href="#faq">About Us</a></li>
+<li><a class="hover:text-purple-600 transition-colors" href="#faq">FAQ</a></li>
+<li><a class="hover:text-purple-600 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-purple-600 transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+<p>Engineered for clean, modern execution. Built with pure SaaS precision.</p>
+<div class="flex items-center gap-4">
+<a class="hover:text-slate-600 transition-colors" href="#">Twitter (X)</a>
+<a class="hover:text-slate-600 transition-colors" href="#">LinkedIn</a>
+<a class="hover:text-slate-600 transition-colors" href="#">YouTube</a>
+<a class="hover:text-slate-600 transition-colors" href="#">Discord Community</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
