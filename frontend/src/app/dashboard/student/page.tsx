@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
 import { STUDENT_DATA } from "@/data/dashboardData";
 import { COURSES } from "@/data/courses";
 import VideoModal from "@/components/VideoModal";
+import DashboardTour from "@/components/DashboardTour";
 import { useAuth } from "@/context/AuthContext";
 import { DEFAULT_AVATAR } from "@/lib/firebase";
 import UserAvatar from "@/components/UserAvatar";
@@ -33,6 +34,20 @@ export default function StudentDashboardPage() {
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [submissionUrl, setSubmissionUrl] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [tourOpen, setTourOpen] = useState(false);
+
+  // Auto-launch interactive product tour for new visitors
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const hasSeenTour = localStorage.getItem("aura_tour_completed");
+      if (!hasSeenTour) {
+        const timer = setTimeout(() => {
+          setTourOpen(true);
+        }, 700);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, []);
 
   // Trigger celebratory confetti burst
   const triggerConfetti = () => {
@@ -109,9 +124,12 @@ export default function StudentDashboardPage() {
       </div>
 
       {/* =========================================================================
-          1. MODERN HIGH-TECH DESKTOP SIDEBAR
+          1. MODERN HIGH-TECH DESKTOP SIDEBAR (Scrollable & Responsive)
       ========================================================================= */}
-      <aside className="hidden lg:flex w-72 bg-slate-950/85 backdrop-blur-2xl border-r border-slate-800/80 flex-col justify-between p-6 flex-shrink-0 sticky top-0 h-screen z-20 shadow-[4px_0_30px_rgba(0,0,0,0.5)]">
+      <aside
+        id="tour-sidebar"
+        className="hidden lg:flex w-72 bg-slate-950/85 backdrop-blur-2xl border-r border-slate-800/80 flex-col justify-between p-6 flex-shrink-0 sticky top-0 h-screen overflow-y-auto overflow-x-hidden scrollbar-none z-20 shadow-[4px_0_30px_rgba(0,0,0,0.5)]"
+      >
         <div className="space-y-6">
           {/* Brand Header */}
           <Link href="/" className="flex items-center gap-3 group">
@@ -353,6 +371,18 @@ export default function StudentDashboardPage() {
                 </button>
               ))}
             </div>
+
+            {/* Quick Tour Button in Mobile Drawer */}
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setTourOpen(true);
+              }}
+              className="w-full py-2.5 rounded-xl bg-gradient-to-r from-purple-600/40 to-cyan-500/30 border border-purple-400/50 text-purple-200 text-xs font-bold flex items-center justify-center gap-2"
+            >
+              <span className="material-symbols-outlined text-[17px] text-cyan-300">explore</span>
+              <span>Start Interactive Tour</span>
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
@@ -416,6 +446,19 @@ export default function StudentDashboardPage() {
               <span>{STUDENT_DATA.student.totalXp} XP</span>
             </motion.div>
 
+            {/* Interactive Guided Tour Trigger */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setTourOpen(true)}
+              className="flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-gradient-to-r from-purple-600/30 via-indigo-600/30 to-cyan-500/25 hover:from-purple-600/50 hover:to-indigo-600/50 border border-purple-400/50 text-purple-200 text-xs font-bold shadow-lg shadow-purple-600/20 transition-all cursor-pointer group"
+            >
+              <span className="material-symbols-outlined text-[18px] text-cyan-300 group-hover:rotate-45 transition-transform">
+                explore
+              </span>
+              <span>Quick Tour</span>
+            </motion.button>
+
             {/* Community Discord Link */}
             <motion.a
               whileHover={{ scale: 1.05 }}
@@ -445,6 +488,7 @@ export default function StudentDashboardPage() {
             >
               {/* HERO CARD: CINEMATIC RESUME LESSON */}
               <motion.div
+                id="tour-continue-learning"
                 whileHover={{ y: -3 }}
                 transition={{ duration: 0.2 }}
                 className="relative rounded-3xl bg-gradient-to-br from-slate-900/90 via-slate-950 to-indigo-950/80 border border-purple-500/30 text-white p-6 sm:p-8 lg:p-10 shadow-2xl overflow-hidden backdrop-blur-2xl"
@@ -579,7 +623,7 @@ export default function StudentDashboardPage() {
               </motion.div>
 
               {/* 4 HIGH-IMPACT METRICS TILES */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              <div id="tour-metrics" className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 {/* Metric 1 */}
                 <motion.div
                   whileHover={{ y: -5, scale: 1.02 }}
@@ -657,6 +701,7 @@ export default function StudentDashboardPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                 {/* Left: Interactive Missions Sprint */}
                 <motion.div
+                  id="tour-sprint"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4 }}
@@ -745,6 +790,7 @@ export default function StudentDashboardPage() {
 
                 {/* Right: Weekly Flame Calendar & Office Hours */}
                 <motion.div
+                  id="tour-calendar"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4 }}
@@ -1482,6 +1528,14 @@ export default function StudentDashboardPage() {
         onClose={() => setVideoOpen(false)}
         title={activeVideoTitle}
         moduleName={activeVideoModule}
+      />
+
+      {/* =========================================================================
+          6. INTERACTIVE ONBOARDING TOUR
+      ========================================================================= */}
+      <DashboardTour
+        isOpen={tourOpen}
+        onClose={() => setTourOpen(false)}
       />
     </div>
   );
