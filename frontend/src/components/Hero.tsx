@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 
 interface HeroProps {
   onOpenVideo?: (title?: string, moduleName?: string) => void;
@@ -8,42 +9,78 @@ interface HeroProps {
 
 export default function Hero({ onOpenVideo }: HeroProps) {
   return (
-    <section className="relative z-10 w-full max-w-[1360px] mx-auto px-6 lg:px-8 pt-10 pb-12 lg:pt-16 lg:pb-16">
+    <section className="relative z-10 w-full max-w-[1360px] mx-auto px-6 lg:px-8 pt-10 pb-12 lg:pt-16 lg:pb-16 overflow-hidden">
+      {/* Subtle Background Glow Behind Hero */}
+      <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gradient-to-tr from-purple-500/10 via-indigo-500/10 to-cyan-500/10 blur-[130px] rounded-full" />
+
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
         {/* Left Hero Content */}
-        <div className="lg:col-span-6 flex flex-col items-start space-y-6">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="lg:col-span-6 flex flex-col items-start space-y-6"
+        >
           {/* Top Pill Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-50/80 border border-purple-100/90 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-[#7C3AED]"></span>
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.4 }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-50/90 border border-purple-200/80 shadow-xs"
+          >
+            <span className="w-2 h-2 rounded-full bg-[#7C3AED] animate-pulse"></span>
             <span className="text-xs font-semibold text-slate-700">Next Cohort Enrolling Now</span>
             <span className="text-slate-300">•</span>
-            <span className="text-xs font-semibold text-[#7C3AED]">Spring 2025</span>
-          </div>
+            <span className="text-xs font-bold text-[#7C3AED]">Spring 2025</span>
+          </motion.div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-black text-slate-950 tracking-tight leading-[1.08]">
+          <motion.h1
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="text-4xl sm:text-5xl lg:text-[58px] font-black text-slate-950 tracking-tight leading-[1.08]"
+          >
             Master SEO &amp; <br />
             Blogging. <br />
-            <span className="text-[#7C3AED]">Turn Traffic Into</span> <br />
-            <span className="text-[#7C3AED]">Revenue.</span>
-          </h1>
+            <span className="bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-800 bg-clip-text text-transparent">
+              Turn Traffic Into
+            </span> <br />
+            <span className="bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-800 bg-clip-text text-transparent">
+              Revenue.
+            </span>
+          </motion.h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl">
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl"
+          >
             Learn step-by-step niche discovery, programmatic SEO, authority blogging, and automated monetization with dedicated mentorship from operators generating 7-figure organic traffic.
-          </p>
+          </motion.p>
 
           {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-3.5 pt-1">
-            <a
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-semibold text-sm shadow-sm hover:shadow transition-all"
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="flex flex-wrap items-center gap-3.5 pt-1"
+          >
+            <motion.a
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-bold text-sm shadow-lg shadow-purple-600/30 transition-all cursor-pointer"
               href="#courses"
             >
               <span>Explore 2 Mastercourses</span>
               <span className="text-base font-bold">→</span>
-            </a>
-            <a
-              className="inline-flex items-center gap-2.5 px-5 py-3.5 rounded-2xl bg-white text-slate-700 font-semibold text-sm border border-slate-200 hover:bg-slate-50 hover:border-slate-300 transition-all shadow-xs"
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2.5 px-5 py-3.5 rounded-2xl bg-white text-slate-700 font-semibold text-sm border border-slate-200 hover:bg-slate-50 hover:border-slate-300 transition-all shadow-xs cursor-pointer"
               href="#roadmap"
             >
               <svg
@@ -60,11 +97,16 @@ export default function Hero({ onOpenVideo }: HeroProps) {
                 <circle cx="18" cy="5" r="3" />
               </svg>
               <span>View Roadmap</span>
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
 
           {/* Social Proof Strip */}
-          <div className="pt-3 flex flex-wrap items-center gap-4 w-full">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="pt-3 flex flex-wrap items-center gap-4 w-full"
+          >
             <div className="flex items-center -space-x-2">
               <img
                 alt="Learner"
@@ -101,13 +143,22 @@ export default function Hero({ onOpenVideo }: HeroProps) {
                 Trusted by 18,000+ niche site builders &amp; content marketers
               </p>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* Right Hero Visual: Exact SaaS Dashboard Preview from Image */}
-        <div className="lg:col-span-6 relative pt-4 sm:pt-0">
+        {/* Right Hero Visual: Exact SaaS Dashboard Preview from Image with Framer Motion */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="lg:col-span-6 relative pt-4 sm:pt-0"
+        >
           {/* Main Card Container */}
-          <div className="relative bg-white rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-100 p-6 sm:p-7 space-y-4">
+          <motion.div
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.25 }}
+            className="relative bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl shadow-purple-900/10 border border-slate-100 p-6 sm:p-7 space-y-4"
+          >
             {/* Top Bar inside Card */}
             <div className="flex items-center justify-between pb-1">
               <span className="text-xs font-mono font-medium text-slate-400 tracking-wide pl-2">
@@ -142,7 +193,7 @@ export default function Hero({ onOpenVideo }: HeroProps) {
                 </div>
               </div>
 
-              {/* Smooth Purple Curve Wave Line */}
+              {/* Smooth Purple Curve Wave Line with Motion Animation */}
               <div className="h-20 w-full relative pt-2">
                 <svg
                   viewBox="0 0 400 80"
@@ -155,13 +206,16 @@ export default function Hero({ onOpenVideo }: HeroProps) {
                       <stop offset="100%" stopColor="#7C3AED" stopOpacity="0.0" />
                     </linearGradient>
                   </defs>
-                  {/* Subtle Area Fill */}
+                  {/* Area Fill */}
                   <path
                     d="M 0,68 C 80,68 130,58 200,52 C 270,46 320,28 400,20 L 400,80 L 0,80 Z"
                     fill="url(#purpleChartGrad)"
                   />
                   {/* Glowing Stroke Curve */}
-                  <path
+                  <motion.path
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 1.5, ease: "easeInOut" }}
                     d="M 0,68 C 80,68 130,58 200,52 C 270,46 320,28 400,20"
                     fill="none"
                     stroke="#7C3AED"
@@ -181,7 +235,12 @@ export default function Hero({ onOpenVideo }: HeroProps) {
                 <span className="font-semibold text-[#7C3AED]">82% Complete</span>
               </div>
               <div className="w-full bg-slate-200/80 h-2 rounded-full overflow-hidden">
-                <div className="bg-gradient-to-r from-purple-600 to-indigo-600 h-full rounded-full w-[82%]"></div>
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: "82%" }}
+                  transition={{ duration: 1.2, ease: "easeOut" }}
+                  className="bg-gradient-to-r from-purple-600 to-indigo-600 h-full rounded-full"
+                />
               </div>
               <div className="flex items-center justify-between text-[11px] text-slate-500 pt-0.5">
                 <span>Next: Core Web Vitals Audit on Search Console</span>
@@ -202,22 +261,28 @@ export default function Hero({ onOpenVideo }: HeroProps) {
                   <div className="text-[11px] text-slate-500">Head of Growth @ ex-HubSpot</div>
                 </div>
               </div>
-              <button
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={() =>
                   onOpenVideo?.(
                     "Module 4: Topic Clusters, Semantic Depth & Content Hubs",
                     "SEO Zero to Hero"
                   )
                 }
-                className="px-4 py-2 rounded-xl bg-slate-950 hover:bg-slate-800 text-white text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-xs"
+                className="px-4 py-2 rounded-xl bg-slate-950 hover:bg-slate-800 text-white text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-xs cursor-pointer"
               >
                 <span>Resume Lesson</span>
                 <span className="text-[11px]">▶</span>
-              </button>
+              </motion.button>
             </div>
 
-            {/* Floating Streak Pill (Top-Left) */}
-            <div className="absolute -top-4 -left-3 sm:-left-5 bg-white px-4 py-2.5 rounded-2xl shadow-lg border border-slate-100 flex items-center gap-3">
+            {/* Floating Streak Pill (Top-Left) with Continuous Floating Animation */}
+            <motion.div
+              animate={{ y: [-4, 4, -4] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              className="absolute -top-4 -left-3 sm:-left-5 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3"
+            >
               <div className="w-8 h-8 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center font-bold">
                 <span
                   className="material-symbols-outlined text-[20px]"
@@ -232,10 +297,14 @@ export default function Hero({ onOpenVideo }: HeroProps) {
                 </div>
                 <div className="text-[11px] text-slate-500 font-medium">+240 XP Earned Today</div>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Floating Feedback Pill (Bottom-Right) */}
-            <div className="absolute -bottom-4 -right-3 sm:-right-4 bg-white px-4 py-2.5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-2.5 max-w-[260px]">
+            {/* Floating Feedback Pill (Bottom-Right) with Continuous Floating Animation */}
+            <motion.div
+              animate={{ y: [4, -4, 4] }}
+              transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
+              className="absolute -bottom-4 -right-3 sm:-right-4 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-2.5 max-w-[260px]"
+            >
               <div className="w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
                 <span className="material-symbols-outlined text-[18px]">verified</span>
               </div>
@@ -245,9 +314,9 @@ export default function Hero({ onOpenVideo }: HeroProps) {
                   &ldquo;Flawless semantic markup.&rdquo;
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
