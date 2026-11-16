@@ -12,6 +12,8 @@
     "test:backend": "npm --prefix backend test",
     "prisma:push": "npm --prefix backend run prisma:push",
     "seed:backend": "npm --prefix backend run seed"
+  },
+  "dependencies": {
+    "npm-skills": "^0.5.1"
   }
 }
-

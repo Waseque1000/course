@@ -1,0 +1,26 @@
+{
+  "packages": {
+    "@better-auth/cli": [],
+    "@tailwindcss/container-queries": [],
+    "@tailwindcss/forms": [],
+    "@types/node": [],
+    "@types/pg": [],
+    "@types/react": [],
+    "@types/react-dom": [],
+    "autoprefixer": [],
+    "better-auth": [],
+    "clsx": [],
+    "firebase": [],
+    "framer-motion": [],
+    "lucide-react": [],
+    "next": [],
+    "pg": [],
+    "postcss": [],
+    "react": [],
+    "react-dom": [],
+    "recharts": [],
+    "tailwind-merge": [],
+    "tailwindcss": [],
+    "typescript": []
+  }
+}
